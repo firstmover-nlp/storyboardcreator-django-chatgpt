@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>이미지 예시</title>
+</head>
+
+<style>
+    .container2 {
+        max-width: 3000px;
+        width: 100%;
+        margin: 30px auto 0;
+        margin-left: 320px;
+        padding: 30px;
+        background: linear-gradient(to bottom, 
+        rgba(245, 245, 245, 0.6),
+        rgba(230, 230, 230, 0.6));
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        border-radius: 15px;
+        display: flex;
+    }
+
+    .advertisement, .advertisement2, .advertisement3 {
+        position: absolute;
+        left: 330px;
+        font-size: 40px;
+        font-weight: bold;
+        color: white; /* 흰색 글자 */
+        text-shadow: 
+            -1px -1px 0 #000,  
+             1px -1px 0 #000,
+            -1px  1px 0 #000,
+             1px  1px 0 #000; /* 검은색 테두리 */
+    }
+    
+    .advertisement {
+        top: 250px;
+    }
+    
+    .advertisement2 {
+        top: 740px;
+    }
+    
+    .advertisement3 {
+        top: 1260px;
+    }
+    
+</style>
+
+<body>
+    <div class="advertisement">광고</div>
+    <div class="container2">
+        <img src="{% static 'denis.png' %}" alt="Denis의 이미지" style="width: 40%; height: auto;">
+        <img src="{% static 'remy.png' %}" alt="Remy의 이미지" style="width: 40%; height: auto;">
+    </div>
+    <div class="advertisement2">숏폼</div>
+    <div class="container2">
+        <img src="{% static 'denis.png' %}" alt="Denis의 이미지" style="width: 40%; height: auto;">
+        <img src="{% static 'eugene.png' %}" alt="Eugene의 이미지" style="width: 40%; height: auto;">
+        <img src="{% static 'camila.png' %}" alt="Camila의 이미지" style="width: 40%; height: auto;">
+
+    </div>
+    <div class="advertisement3">정보</div>
+    <div class="container2">
+        <img src="{% static 'dave.png' %}" alt="Dave의 이미지" style="width: 40%; height: auto;">
+    </div>
+</body>
+</html>
+{% endblock content %}

@@ -1,0 +1,340 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시나리오/콘티 생성</title>
+    <link rel="stylesheet" href="{% static 'style4.css' %}">
+
+    
+</head>
+
+<style>
+    body {
+        overflow-x: hidden; /* 수평 스크롤바 숨김 */
+        background-color: #FFBE98; /* 배경 색상 설정 */
+        font-family: 'Open Sans', sans-serif; /* 폰트 설정 */
+        margin: 0; /* 바디의 마진 제거 */
+        padding: 0; /* 바디의 패딩 제거 */
+        box-sizing: border-box; /* 박스 크기 계산 방식 변경 */
+    }
+    
+    .container {
+        max-width: 1000px; /* 컨테이너 최대 너비 */
+        margin: 30px auto 0; /* 중앙 정렬 */
+        margin-left: 320px; /* 왼쪽 마진 추가 */
+        padding: 30px;  /* 패딩 추가 */
+        background: linear-gradient(to bottom, 
+        rgba(255, 239, 230, 0.8),
+        rgba(255, 209, 184, 0.8)); /* #FFD1B8 with 80% opacity */
+         /* #FFB6B6 with 80% opacity */
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+        border-radius: 15px; /* 모서리 둥글게 */
+    }
+    
+    h5, p, label {
+        color: #333; /* 글자 색상 */
+        text-align: center; /* 중앙 정렬 */
+        font-family: 'Roboto', sans-serif; /* 글씨체 */
+        font-size: 24px; /* 글씨 크기 증가 */
+        margin: 20px 0; /* 마진 설정 */
+        line-height: 1.6; /* 줄 간격 */
+    }
+    
+    img {
+        max-width: 50%; /* 이미지 최대 너비 */
+        height: auto; /* 높이 자동 조절 */
+        display: block; /* 블록 레벨 요소로 표시 */
+        margin: 20px auto; /* 중앙 정렬 및 마진 설정 */
+    }
+    
+    form {
+        text-align: center; /* 폼 중앙 정렬 */
+    }
+    
+    textarea {
+        width: 100%; /* 너비 100% */
+        margin-bottom: 20px; /* 마진 */
+        margin-left: -10px; /* 왼쪽으로 20px 이동 */
+        font-size: 16px; /* 글씨 크기 */
+        padding: 10px; /* 패딩 */
+        border: none; /* 테두리 없애기 */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+        border-radius: 8px; /* 둥근 모서리 */
+        transition: all 0.3s; /* 부드러운 전환 효과 */
+    }
+    
+    textarea:focus {
+        outline: none; /* 아웃라인 제거 */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* 그림자 효과 증가 */
+        transform: scale(1.02); /* 약간 확대 */
+    }
+    
+    button {
+        background-color: #FFBE98; /* 버튼 배경 색상 */
+        border: none; /* 테두리 없음 */
+        color: white; /* 글자 색상 */
+        padding: 15px 30px; /* 패딩 */
+        text-align: center; /* 텍스트 중앙 정렬 */
+        text-decoration: none; /* 텍스트 장식 없음 */
+        display: inline-block; /* 인라인 블록으로 표시 */
+        font-size: 18px; /* 폰트 크기 */
+        margin: 4px 2px; /* 마진 */
+        cursor: pointer; /* 커서 포인터 */
+        border-radius: 8px; /* 모서리 둥글게 */
+        transition: background-color 0.3s; /* 배경색 전환 효과 */
+    }
+    
+    button:hover {
+        background-color: #E0A97A; /* 마우스 오버 시 버튼 색상 변경 */
+    }
+    img {
+        max-width: 80%;
+        max-height: 500px;
+        width: auto;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+    #imageContainer {
+        width: 100%;
+    }
+    .conversation-container {
+        position: relative; /* 내부 요소의 절대 위치 기준점 설정 */
+        /* 기타 스타일 */
+    }
+    
+    #loading {
+        display: none; /* 기본적으로 숨김 */
+        position: absolute; /* 대화 상자 내부에 위치 */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.8); /* 반투명 배경 */
+        align-items: center;
+        justify-content: center;
+        display: flex; /* 중앙 정렬을 위해 flex 사용 */
+    }
+    
+    .loading-content {
+        display: flex; /* 플렉스 박스 사용 */
+        align-items: center; /* 세로 중앙 정렬 */
+    }
+    
+    .loading-text {
+        margin-left: 3px; /* 애니메이션과 텍스트 사이 간격 */
+        font-size: 20px; /* 글꼴 크기 줄임 */
+    }
+    
+    .droplet_spinner {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .droplet_spinner .droplet {
+        width: 9px;
+        height: 9px;
+        margin: 0 5px;
+        
+        background-color: #e14242;
+        border-radius: 50%;
+        transform-origin: center bottom;
+        
+        animation: bounce 1.2s cubic-bezier(0.3, 0.01, 0.4, 1) infinite;
+    }
+    
+    .droplet_spinner .droplet:nth-child(1) {
+        animation-delay: -0.4s;
+    }
+    
+    .droplet_spinner .droplet:nth-child(2) {
+        animation-delay: -0.2s;
+    }
+    
+    .droplet_spinner .droplet:nth-child(3) {
+        animation-delay: 0s;
+    }
+    
+    @keyframes bounce {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-20px);
+        }
+    }
+    /* 버튼이 눌렸을 때의 스타일 */
+    .button-pressed {
+        background-color: #000; 
+        color: white; /* 흰색 텍스트 */
+    }
+    
+    /* 선택된 버튼 스타일 */
+    .selected {
+        background-color: #4CAF50; /* 또는 원하는 색상 */
+        color: white;
+    }
+    
+    .chat-box {
+        background-color: #f2f2f2; /* 박스의 배경색 */
+        border: 1px solid #ddd; /* 테두리 */
+        border-radius: 10px; /* 둥근 모서리 */
+        padding: 10px; /* 내부 여백 */
+        margin-bottom: 10px; /* 박스 간 간격 */
+    }
+    
+    .question, .answer {
+        font-size: 16px; /* 글자 크기 */
+        line-height: 1.5; /* 줄 간격 */
+        color: #333; /* 글자 색상 */
+    }
+    
+    .question {
+        font-weight: bold; /* 질문 글자 굵게 */
+    }
+    
+    .answer {
+        margin-top: 5px; /* 질문과 대답 사이의 여백 */
+    }
+    
+    .chat-box {
+        /* 애니메이션 효과 추가 */
+        transition: all 0.3s ease;
+    }
+    
+    #prevButton, #nextButton {
+        /* 버튼 스타일링 */
+        padding: 10px;
+        margin: 10px;
+        border-radius: 5px;
+        background-color: #FFBE98;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    
+    #prevButton:hover, #nextButton:hover {
+        background-color: #E0A97A;
+    }
+    
+
+</style>
+
+<body>
+    <div class="container">
+        <form id="dataForm" method="post" action="{% url 'dave' %}">
+            {% csrf_token %}
+            <label for="user_input">교육 및 정보 공유와 커뮤니티 형성 전문가인 Dave에게 시놉시스와 스토리 보드 작성을 요청해보세요.</label>
+            <p></p>
+            <textarea name="user_input" id="user_input" rows="6" cols="100" required></textarea>
+            <p></p>
+            <button type="submit">시나리오&콘티 생성</button>
+        </form>
+
+        <!-- 대화 내역 삭제 버튼을 위한 별도의 폼 -->
+        <form method="post" action="{% url 'dave' %}">
+            {% csrf_token %}
+            <input type="hidden" name="action" value="clear_dave_conversation">
+            <button type="submit">대화 내역 전체 삭제</button>
+        </form>
+
+        <!-- 결과 출력 -->
+        <div class="conversation-container">
+            {% for chat in dave_conversation %}
+                <div class="chat-box" id="chat-{{ forloop.counter }}">
+                    <p class="question">{{ chat.question }}</p>
+                    <p class="answer">{{ chat.answer }}</p>
+                    <!-- 이미지 출력 -->
+                    {% if chat.image_url %}
+                        <img src="{{ chat.image_url }}" alt="Generated Image" style="max-width:100%; height:auto;">
+                    {% endif %}
+                </div>
+            {% endfor %}
+
+            <!-- 로딩 애니메이션 -->
+            <div id="loading" style="display:none;">
+                <div class="loading-content">
+                    <div class="droplet_spinner">
+                        <div class="droplet"></div>
+                        <div class="droplet"></div>
+                        <div class="droplet"></div>
+                    </div>
+                    <p class="loading-text">생성 중...</p>
+                </div>
+            </div>
+        </div>
+
+        <button id="prevChat">이전</button>
+        <button id="nextChat">다음</button>
+
+        <!-- 이미지 생성 버튼을 포함하는 폼 -->
+        <form method="post" action="{% url 'dave' %}" style="position: relative;">
+            {% csrf_token %}
+            <input type="hidden" name="action" value="create_image">
+            <button type="submit" class="image-create-button" style="position: absolute; right: 0; bottom: 0;">이미지 생성</button>
+        </form>
+
+    
+    <!-- 로딩 애니메이션을 시작하고 끝내는 스크립트 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var dataForm = document.getElementById('dataForm');
+            var loadingDiv = document.getElementById('loading');
+            var conversationContainer = document.querySelector('.conversation-container');
+        
+            // 폼 제출 이벤트 리스너
+            dataForm.addEventListener('submit', function(event) {
+                // 대화 상자가 비어 있지 않은 경우에만 로딩 애니메이션 표시
+                if (conversationContainer.children.length > 0) {
+                    loadingDiv.style.display = 'flex';
+                }
+            });
+        });
+        
+        
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatBoxes = document.querySelectorAll('.chat-box');
+            const totalChats = chatBoxes.length;
+            let currentChatIndex = totalChats;
+        
+            // 모든 채팅을 숨깁니다
+            chatBoxes.forEach(chat => chat.style.display = 'none');
+        
+            // 가장 마지막 채팅을 보여줍니다
+            if (totalChats > 0) {
+                chatBoxes[totalChats - 1].style.display = 'block';
+            }
+        
+            // 이전 버튼 이벤트 리스너
+            document.getElementById('prevChat').addEventListener('click', function() {
+                if (currentChatIndex > 1) {
+                    changeChat(-1);
+                }
+            });
+        
+            // 다음 버튼 이벤트 리스너
+            document.getElementById('nextChat').addEventListener('click', function() {
+                if (currentChatIndex < totalChats) {
+                    changeChat(1);
+                }
+            });
+        
+            // 채팅을 변경하는 함수
+            function changeChat(direction) {
+                chatBoxes[currentChatIndex - 1].style.display = 'none';
+                currentChatIndex += direction;
+                chatBoxes[currentChatIndex - 1].style.display = 'block';
+            }
+        });
+
+        {% comment %} var dataForm = document.getElementById('dataForm');
+        var loadingDiv = document.getElementById('loading');
+        var resultImage = document.getElementById('resultImage'); {% endcomment %}
+
+    </script>
+</body>
+{% endblock content %}

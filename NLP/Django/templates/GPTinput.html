@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    body {
+    overflow-x: hidden; /* 수평 스크롤바 숨김 */
+    background-color: #FFBE98; /* 배경 색상 설정 */
+    font-family: 'Open Sans', sans-serif; /* 폰트 설정 */
+    margin: 0; /* 바디의 마진 제거 */
+    padding: 0; /* 바디의 패딩 제거 */
+    box-sizing: border-box; /* 박스 크기 계산 방식 변경 */
+    margin-left: 50px; /* 전체 컨텐츠를 왼쪽으로 50px 이동 */
+}
+
+    /* 전체 폼을 가운데 정렬 */
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* 텍스트 입력창 스타일 */
+    textarea {
+        width: 80%; /* 너비를 80%로 설정 */
+        max-width: 600px; /* 최대 너비 제한 */
+        height: 150px; /* 높이 설정 */
+        margin-bottom: 20px; /* 아래 여백 추가 */
+        padding: 10px; /* 패딩 추가 */
+        border: 2px solid #FFBE98; /* 테두리 색상 변경 */
+        border-radius: 5px; /* 테두리 둥글게 */
+        background-color: #FFEFE6; /* 배경색 설정 */
+    }
+
+    /* 라벨 스타일링 */
+    label {
+        font-size: 20px; /* 글씨 크기 증가 */
+        font-weight: bold; /* 글씨 굵게 */
+        text-shadow: 2px 2px 4px #888; /* 텍스트에 그림자 추가 */
+    }
+
+    /* 버튼 스타일링 */
+    button {
+        cursor: pointer; /* 버튼에 마우스를 올리면 커서 변경 */
+        padding: 10px 20px; /* 패딩 추가 */
+        background-color: #FFBE98; /* 배경색 변경 */
+        color: white; /* 글자색 */
+        border: none; /* 테두리 없애기 */
+        border-radius: 5px; /* 테두리 둥글게 */
+        font-size: 18px; /* 글씨 크기 증가 */
+        box-shadow: 3px 3px 6px #888; /* 버튼에 그림자 추가 */
+        transform: translateZ(0); /* 3D 변환 준비 */
+        transition: transform 0.3s, box-shadow 0.3s; /* 변환 및 그림자 전환 효과 */
+    }
+
+    button:hover {
+        transform: scale(1.05) translateZ(50px); /* 마우스 오버 시 버튼 확대 및 '떠오르는' 효과 */
+        box-shadow: 5px 5px 12px #666; /* 그림자 변경 */
+    }
+
+    /* 제목 스타일 */
+    .title h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        background-color: #FFBE98;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        opacity: 0.7;
+        transition: opacity 0.5s;
+        z-index: 1; /* 타이틀의 z-index 값을 낮게 설정 */
+    }
+
+    /* 이미지 스타일 */
+    .title img {
+        display: block;
+        margin: 10px auto; /* 위아래 마진과 자동 가로 마진으로 중앙 정렬 */
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const title = document.querySelector('.title h1');
+        let isFaded = false;
+
+        // 매 1초마다 반짝이는 효과 적용
+        setInterval(function() {
+            title.style.opacity = isFaded ? 0.7 : 1;
+            isFaded = !isFaded;
+        }, 1000);
+    });
+</script>
+
+<body>
+    <div class="title">
+        <h1>AI 시나리오 기획자</h1>
+        {% comment %} <a href="https://imgbb.com/"> {% endcomment %}
+        <!-- 링크 태그 제거 -->
+        <img src="https://i.ibb.co/K5yvKdx/fastfollwer-logo.png" alt="fastfollwer-logo" border="0">        </a>
+    </div>
+
+    <form method="post" action="{% url 'gamepage' %}">
+        {% csrf_token %}
+        <label for="user_input">AI 상담사 입니다. fastfollwer에 대한 궁금한 점이 있으신가요? </label>
+        <textarea name="user_input" id="user_input" required></textarea>
+        <button type="submit">문의하기</button>
+    </form>
+    <div>
+        <div>
+            <h5>
+                {{Data}}
+            </h5>
+        </div>
+    </div>
+</body>
+{% endblock content %}

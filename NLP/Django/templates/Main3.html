@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 숏폼 광고 시나리오 생성기</title>
+    <link rel="stylesheet" href="{% static 'style3.css' %}">
+
+    <style>
+        body {
+            background-image: url('{% static 'Pink White Gradient Event Video Background.gif' %}');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+     
+        /* Update the background color of the buttons */
+        .button {
+            background-color: #D3A693; /* Changes the button background color */
+            /* Keep other button styling as it is */
+            /* Add any additional button styling as needed */
+        }
+
+        .dropdown {
+            background-color: #D3A693; /* 드롭다운 배경색 변경 */
+            color: white; /* 드롭다운 글자색 변경 */
+            padding: 10px; /* 패딩 추가 */
+            border: none; /* 테두리 제거 */
+            font-size: 16px; /* 글자 크기 조정 */
+            border-radius: 5px; /* 모서리 둥글게 */
+        }
+
+        /* 드롭다운 확장될 때 스타일 */
+        .dropdown:hover, .dropdown:focus {
+            background-color: #E6B2A6; /* 호버 시 배경색 변경 */
+        }
+
+        
+    </style>
+</head>
+<body>
+
+    <!-- Background slideshow -->
+    {% comment %} <div class="bg-slideshow">
+        <div class="slides" style="background-image: url('https://i.ibb.co/TrxkmvJ/af.png');"></div>
+        <div class="slides" style="background-image: url('https://i.ibb.co/Lzh8sJX/DALL-E-2023-12-12-14-53-52-Simple-and-rough-storyboard-sketches-for-a-dog-treat-advertisement-Scene.png');"></div>
+    </div>
+    <img src = "{% static 'Pink White Gradient Event Video Background.gif' %}" alt="Blue-Modern-Sky"> {% endcomment %}
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 5000); // Change image every 5 seconds
+        }
+    </script>
+   
+
+    <div class="content">
+        <header>
+            <h1>AI 숏폼 광고 시나리오 생성기</h1>
+            <p>AI를 활용한 시나리오/콘티 제작</p>
+            <button class="button" onclick="location.href='game'">시나리오/콘티 제작</button>
+        </header>
+
+        <!-- Sections Container -->
+        <div class="sections-container"> <!-- Flexbox container for sections -->
+
+            <section>
+                <h2>숏폼 광고를 쉽게 제작하세요</h2>
+                <p>AI가 당신의 아이디어를 시나리오와 콘티로 변환합니다.</p>
+            </section>
+
+            <section>
+                <h2>주요 기능</h2>
+                <ul>
+                    <li>AI 기반 시나리오 생성</li>
+                    <li>커스텀 콘티 옵션</li>
+                    <li>즉시 피드백 및 수정 기능</li>
+                    <!-- 여기에 더 많은 기능 추가 가능 -->
+                </ul>
+                <select class="dropdown">
+                    <option value="intro">소개</option>
+                    <option value="advanced">고급</option>
+                    <!-- 여기에 추가 옵션 -->
+                </select>
+            </section>
+
+            <section>
+                <h2>예시</h2>
+                <p>이전에 AI가 생성한 광고 시나리오와 콘티의 예시들입니다.</p>
+                <button class="button">예시보기</button>
+
+            </section>
+
+        </div> <!-- End of Sections Container -->
+
+        <!-- ... 추가적인 내용 또는 푸터 ... -->
+
+    </div>
+
+</body>
+</html>
+
+
+
+{% comment %} /* 배경 슬라이드쇼 스타일 */
+.bg-slideshow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* 콘텐츠 뒤에 배치 */
+    overflow: hidden;
+}
+
+.slides {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+} {% endcomment %}

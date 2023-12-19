@@ -1,0 +1,50 @@
+/* 기본 설정 */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
+    color: #333;
+}
+
+.wrapper {
+    max-width: 960px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* 헤더 */
+.site-header {
+    background-color: #FFBE98;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* 버튼 섹션 */
+.button-section {
+    text-align: center;
+    padding: 20px;
+}
+
+.button-section button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #FFBE98;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-section button:hover {
+    background-color: #e8a87c;
+}
+
+/* 푸터 */
+.site-footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    color: #fff;
+}

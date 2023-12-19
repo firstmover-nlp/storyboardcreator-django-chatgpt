@@ -1,0 +1,129 @@
+/* 전체 페이지에 대한 기본 스타일 설정 */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    text-align: center;
+}
+
+/* 비디오 배경에 대한 스타일 */
+.bg-video {
+    position: fixed; 
+    right: 0; 
+    bottom: 0;
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; /* 비디오를 화면에 꽉 차게 설정 */
+}
+
+/* 페이지의 내용에 대한 스타일 */
+.content {
+    position: relative;
+    z-index: 10; /* 비디오 위에 내용이 보이도록 z-index 설정 */
+    padding-top: 100px; /* 내용과 상단 간격 설정 */
+}
+
+/* 헤더의 스타일 */
+header {
+    margin-bottom: 50px;
+}
+
+header h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+header p {
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+/* Sections Container 스타일 */
+.sections-container {
+    display: flex; /* Flexbox 적용 */
+    justify-content: center; /* 가운데 정렬 */
+    align-items: stretch; /* 섹션들의 높이를 같게 설정 */
+    gap: 20px; /* 섹션 사이 간격 설정 */
+    margin: 20px 0; /* 상하 간격 설정 */
+    flex-wrap: wrap; /* 내용이 많아지면 다음 줄로 넘김 */
+}
+
+/* 섹션의 스타일 */
+section {
+    flex: 1;
+    max-width: 250px;
+    background: rgba(228, 200, 182, 0.7); /* 배경색을 #915D53와 투명도 0.7로 변경 */
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #fff; /* 테두리 색상은 이전 설정값 유지 */
+}
+
+
+section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+section p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* 버튼의 스타일 */
+.button {
+    padding: 12px 25px;
+    background: #444; /* 버튼 배경색 */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+    margin-top: 20px; /* 버튼 상단 간격 */
+    transition: background-color 0.3s ease; /* 부드러운 배경색 변화 효과 */
+}
+
+.button:hover {
+    background-color: #666; /* 마우스 호버시 버튼 색상 변경 */
+}
+
+/* 드롭다운 메뉴의 스타일 */
+.dropdown {
+    padding: 10px;
+    background: #444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+    outline: none;
+}
+
+.dropdown:hover {
+    background-color: #666; /* 마우스 호버시 드롭다운 배경 색상 변경 */
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header p {
+        font-size: 1.2rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+    .content {
+        padding-top: 50px;
+    }
+
+    .sections-container {
+        flex-direction: column; /* 모바일 화면에서는 세로로 배치 */
+    }
+}
