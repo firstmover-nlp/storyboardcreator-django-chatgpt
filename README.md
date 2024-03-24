@@ -1,22 +1,31 @@
-## NLP 프로젝트_OpenAI ChatGPT4.0/Dall-e-3 
-### 프로젝트 수행 기간  
-#### 기획/R&R 설정: 12.07 ~ 11  
-#### 개발: 12.13 ~ 19  
-#### PPT/발표: 12.20
+<p align="center"><img src="https://github.com/firstmover-nlp/storyboardcreator-spring-chatgpt/assets/124758100/cc2276ac-5d47-4347-a27f-912ef87de3f8"  width="800" height="450"/></p>
 
-## 1.프로젝트 소개
+<br/><br/>
+<h2 align="center">🎬 AI 숏크 - ChatGPT4 API와 Dall-E-3를 이용한 시나리오 콘티 제작 서비스 </h2>
 
-![image](https://github.com/firstmover-nlp/chatgpt/assets/124758100/b3e18377-3f9e-4075-9ec7-4a2e2126134f)
-![image](https://github.com/firstmover-nlp/storyboardcreator-spring-chatgpt/assets/124758100/2367748c-f437-499a-91af-e86f2f2c89eb)
-![image](https://github.com/firstmover-nlp/storyboardcreator-spring-chatgpt/assets/124758100/48130f52-eb44-4684-89a0-aed0aa22f784)
-![image](https://github.com/firstmover-nlp/chatgpt/assets/124758100/25f8f032-75b3-4a7e-9d22-01c2e755eb83)
-![image](https://github.com/firstmover-nlp/chatgpt/assets/124758100/93ad7617-fdfd-4cc2-b5a1-f7b03fc4858c)
-![image](https://github.com/firstmover-nlp/chatgpt/assets/124758100/88975f17-a474-49dd-a347-6e1d9f71a7d6)
+'[인텔] AI For Future Workforce를 활용한 인공지능 인재 양성과정'의 팀 프로젝트  
 
-## 2.기술 스택
+프로젝트 기간: 2023.12.13 ~ 12.19
+
+`ChatGPT4 API`와 `Dall-E-3`를 사용하여 영상의 `시나리오`와 `콘티`를 제공해주는 서비스로 숏폼을 제작하는 크리에이터들의 아이디어 고갈 문제를 해소시켜주고 숏폼 아이디어 생산 및 제작 기간을 단축해주며 각종 숏츠 플랫폼 성향에 맞는 아이디어를 제공해줌.
+
+## 1.기술 스택
 
 
-## 3.시연영상  
+
+## 2.시스템 아키텍처
+![image](https://github.com/firstmover-nlp/storyboardcreator-spring-chatgpt/assets/124758100/f8035643-b138-4769-8f4b-1c4d863ea4d4)
+![image](https://github.com/firstmover-nlp/storyboardcreator-spring-chatgpt/assets/124758100/79bbe465-e5fc-4b21-a840-d4cb9176a0ad)
+
+----
+
+##### 기능흐름도
+![image](https://github.com/firstmover-nlp/storyboardcreator-spring-chatgpt/assets/124758100/715988ca-60b5-450d-a963-3ee582a41792)
+
+##### 활용 장비 및 재료
+![image](https://github.com/firstmover-nlp/storyboardcreator-spring-chatgpt/assets/124758100/a6b64544-b6f9-4ec5-a312-e158f7550d59)
+
+## 3.시연영상 
 https://github.com/firstmover-nlp/storyboardcreator-spring-chatgpt/assets/124758100/16635633-2941-4215-bc83-50a8a77f7624
 
 ### Web Engineers
@@ -31,5 +40,5 @@ https://github.com/firstmover-nlp/storyboardcreator-spring-chatgpt/assets/124758
 |[안은진](https://github.com/dopaminespark)|[이수빈](https://github.com/dltnqls3119)|
   <br>
 
-#### 발표자료
+발표자료
 [[NLP] TEAM3_퍼스트무버_발표자료.pdf  ](https://github.com/firstmover-nlp/chatgpt/issues/2#issue-2148984631)
