@@ -25,7 +25,7 @@ https://github.com/firstmover-nlp/storyboardcreator-spring-chatgpt/assets/124758
 |[문세희](https://github.com/snowball9820)|[김종대](https://github.com/JD131313)|
   <br>
 
-### prompt engineers
+### Prompt Engineers
 |<img src="https://avatars.githubusercontent.com/u/35261264?v=4" width="80">|<img src="https://avatars.githubusercontent.com/u/139526149?v=4"  width="80">|
 |:---:|:---:|
 |[안은진](https://github.com/dopaminespark)|[이수빈](https://github.com/dltnqls3119)|
