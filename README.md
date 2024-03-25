@@ -38,7 +38,11 @@ https://github.com/firstmover-nlp/storyboardcreator-spring-chatgpt/assets/124758
 |<img src="https://avatars.githubusercontent.com/u/35261264?v=4" width="80">|<img src="https://avatars.githubusercontent.com/u/139526149?v=4"  width="80">|
 |:---:|:---:|
 |[안은진](https://github.com/dopaminespark)|[이수빈](https://github.com/dltnqls3119)|
-  <br>
+  <br>  
+  
+멤버: `방창훈` `이수빈` `안은진` `원성호` `김종대` `문세희`  
 
 발표자료
-[[NLP] TEAM3_퍼스트무버_발표자료.pdf  ](https://github.com/firstmover-nlp/chatgpt/issues/2#issue-2148984631)
+[[NLP] TEAM3_퍼스트무버_발표자료.pdf  ](https://github.com/firstmover-nlp/chatgpt/issues/2#issue-2148984631)  
+
+
