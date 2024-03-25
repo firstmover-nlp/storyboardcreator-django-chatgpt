@@ -7,7 +7,7 @@
 
 프로젝트 기간: 2023.12.13 ~ 12.19
 
-`ChatGPT4 API`와 `Dall-E-3`를 사용하여 영상의 `시나리오`와 `콘티`를 제공해주는 서비스로 숏폼을 제작하는 크리에이터들의 아이디어 고갈 문제를 해소시켜주고 숏폼 아이디어 생산 및 제작 기간을 단축해주며 각종 숏츠 플랫폼 성향에 맞는 아이디어를 제공해줌.
+`ChatGPT4 API`와 `Dall-E-3`를 사용하여 영상의 `시나리오`와 `콘티`를 제공해주는 서비스로 숏폼을 제작하는 크리에이터들의 아이디어 고갈 문제를 해소시켜주고 숏폼 아이디어 생산 및 제작 기간을 단축해주며 각종 숏폼 틱톡, 인스타 릴스, 광고, 학습용 영상 등 특성에 맞게 아이디어를 제공해줌.
 
 ## 1.기술 스택
 
@@ -42,7 +42,6 @@ https://github.com/firstmover-nlp/storyboardcreator-spring-chatgpt/assets/124758
   
 멤버: `방창훈` `이수빈` `안은진` `원성호` `김종대` `문세희`  
 
-발표자료
-[[NLP] TEAM3_퍼스트무버_발표자료.pdf  ](https://github.com/firstmover-nlp/chatgpt/issues/2#issue-2148984631)  
+발표자료 [[NLP] TEAM3_퍼스트무버_발표자료.pdf](https://github.com/firstmover-nlp/chatgpt/issues/2#issue-2148984631)  
 
 
